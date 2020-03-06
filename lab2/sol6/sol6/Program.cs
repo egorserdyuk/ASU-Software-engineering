@@ -29,6 +29,8 @@ namespace ConsoleApplication1
                     y = 0;
                 Console.WriteLine("{0,3} {1,5:f2} {2,5:f2}", i, x, y);
             }
+			
+			Console.ReadKey();
         }
     }
 }
