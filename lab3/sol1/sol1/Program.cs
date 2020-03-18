@@ -19,13 +19,13 @@ namespace sol1
         {
             double sum = 0;
 
-            for (int i = 1; i < array.Length - 1; i++)
+            for (int i = 1; i < array.Length; i++)
             {
                 if (array[i] > 0)
                     sum += array[i];
                 else break;
             }
-            Console.WriteLine("Sum between 1st and the last element (negative) = {0}", sum);
+            Console.WriteLine("Sum between 1st and the last negative element = {0}", sum);
         }
 
         static void arrayCompression(double[] array)
@@ -48,10 +48,11 @@ namespace sol1
                 }
             }
 
-            //Console.WriteLine("Compressed array = {0}", array);
+            Console.WriteLine("Final array:\t");
             output(array);
         }
 
+        
         static void input(out double[] array)
         {
             Console.Write("Enter number of elements: ");
@@ -70,7 +71,7 @@ namespace sol1
         {
             foreach (int j in array)
             {
-                Console.Write("{0, 2}", j);
+                Console.Write("{0, 4}", j);
             }
         }
 
