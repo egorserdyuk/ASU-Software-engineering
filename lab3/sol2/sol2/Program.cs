@@ -6,7 +6,7 @@ namespace sol2
     {
         static void change(double[,] array)
         {
-            double min, max, temp;
+            double min = 0, max = 0, temp;
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -19,13 +19,15 @@ namespace sol2
                     min = i;
                 }
             }
-            // В цикле меняем местами столбцы
-            for (int j = 0; j < array.Length; j++)
+            
+            for (int j = 0; j < array.Length; j++)  //В цикле меняем местами столбцы
             {
                 temp = array[j, max];
                 array[j, max] = array[j, min];
                 array[j, min] = temp;
             }
+
+            output(array);
         }
 
         static void input(out double[,] array)
@@ -64,7 +66,7 @@ namespace sol2
             }
         }
 
-        static void output(double[,] array) //вывод двумерного массива
+        static void output(double[,] array) //Вывод двумерного массива
         {
             Console.WriteLine("Two-dimensional array: ");
             for (int i = 0; i < array.GetLength(0); i++)
@@ -91,7 +93,6 @@ namespace sol2
                 randInput(out array);
 
             change(array);
-            output(array);
         }
     }
 }
