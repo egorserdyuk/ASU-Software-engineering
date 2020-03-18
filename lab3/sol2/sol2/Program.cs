@@ -4,7 +4,7 @@ namespace sol2
 {
     class Program
     {
-        static void change(double[,] array)
+        static void change(int[,] array)
         {
             int min = 0, max = 0, temp;
 
@@ -26,34 +26,39 @@ namespace sol2
                 array[j, max] = array[j, min];
                 array[j, min] = temp;
             }
+
+            Console.Write("Changed ");
+            output(array);
         }
 
-        static void input(out double[,] array)
+        static void input(out int[,] array)
         {
             Console.Write("Enter the dimension of the array: ");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            array = new double[n, n];
+            array = new int[n, n];
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     Console.Write("A[{0},{1}]= ", i, j);
-                    array[i, j] = double.Parse(Console.ReadLine());
+                    array[i, j] = int.Parse(Console.ReadLine());
                 }
             }
 
+            Console.Write("Source ");
+            output(array);
         }
 
-        static void randInput(out double[,] array) //рандомный ввод
+        static void randInput(out int[,] array) //рандомный ввод
         {
             Random rand = new Random();
 
             Console.Write("Enter the dimension of the array: ");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            array = new double[n, n];
+            array = new int[n, n];
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -62,11 +67,14 @@ namespace sol2
                     array[i, j] = rand.Next(-50, 50); //рандомные значения от - 50 до 50
                 }
             }
+
+            Console.Write("Source random ");
+            output(array);
         }
 
-        static void output(double[,] array) //Вывод двумерного массива
+        static void output(int[,] array) //Вывод двумерного массива
         {
-            Console.WriteLine("Two-dimensional array: ");
+            Console.WriteLine("two-dimensional array: ");
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -80,7 +88,7 @@ namespace sol2
 
         static void Main(string[] args)
         {
-            double[,] array;
+            int[,] array;
 
             Console.WriteLine("Do you want to input your own data? y/n");
             char check = Convert.ToChar(Console.ReadLine());
@@ -91,7 +99,6 @@ namespace sol2
                 randInput(out array);
 
             change(array);
-            output(array);
         }
     }
 }
