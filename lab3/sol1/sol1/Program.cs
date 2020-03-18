@@ -4,26 +4,32 @@ namespace sol1
 {
     class Program
     {
-        static void unevenSummary(double[] array)
+        static void unevenSummary(double[] array)   //Метод суммирования нечетных ячеек
         {
-            double unevenSum = 0;
+            double unevenSum = 0;   //Инциализация переменной суммы
 
-            for (int i = 1; i < array.Length; i += 2)
+            for (int i = 1; i < array.Length; i += 2)   //Проходим массив с соответстующим шагом
             {
-                unevenSum += array[i];
+                unevenSum += array[i];  //Суммируем
             }
             Console.WriteLine("Sum of uneven elements = {0}", unevenSum);
         }
 
-        static void sumBetween(double[] array)
+        static void sumBetween(double[] array)  //Метод суммирования между 1 и последним отрицательным числом
         {
             double sum = 0;
-
-            for (int i = 1; i < array.Length; i++)
+            
+            for (int i = array.Length - 1; i > 0; i--)  //Начинаем с конца искать последний отрицательный элемент
             {
-                if (array[i] > 0)
-                    sum += array[i];
-                else break;
+                if (array[i] < 0)   //Находим
+                {
+                    for (int j = 1; j < i; j++) //
+                    {
+                        sum += array[j];
+                        if (array[j] == array[i]) break;
+                    }
+                    break;
+                }
             }
             Console.WriteLine("Sum between 1st and the last negative element = {0}", sum);
         }
