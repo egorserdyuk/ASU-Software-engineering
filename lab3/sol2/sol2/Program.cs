@@ -6,9 +6,9 @@ namespace sol2
     {
         static void change(double[,] array)
         {
-            double min = 0, max = 0, temp;
+            int min = 0, max = 0, temp;
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
                 if (array[i, i] > array[max, max])
                 {
@@ -20,14 +20,12 @@ namespace sol2
                 }
             }
             
-            for (int j = 0; j < array.Length; j++)  //В цикле меняем местами столбцы
+            for (int j = 0; j < array.GetLength(0); j++)  //В цикле меняем местами столбцы
             {
                 temp = array[j, max];
                 array[j, max] = array[j, min];
                 array[j, min] = temp;
             }
-
-            output(array);
         }
 
         static void input(out double[,] array)
@@ -93,6 +91,7 @@ namespace sol2
                 randInput(out array);
 
             change(array);
+            output(array);
         }
     }
 }
