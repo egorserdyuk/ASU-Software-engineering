@@ -5,18 +5,39 @@ namespace sol2
 {
     class Program
     {
-        static void delNums(StringBuilder str)
+        static void delNums(StringBuilder s)
         {
-            for (int i = 0; i < str.Length; i++)    //Проходим по строке и если
+            bool isLastDigit = false;
+            bool isRemoved = false;
+
+            for (int i = 0; i < s.Length - 1; i++)
             {
-                if (char.IsDigit(str[i]))
+                if (Char.IsDigit(s[i]) && isLastDigit) // если два символа рядом, то считаем это подстрокой и удаляем ее
                 {
-                    str.Remove(i, 1);
-                    i -= 2;
+                    if (!isRemoved) // если не удалили предыдущую цепочку, то удаляем ее
+                    {
+                        s.Remove(i - 1, 2);
+                        isRemoved = true; // цепочка удалена
+                        i -= 2;
+                    }
+                    else          // если удаляли цепочку,
+                    {
+                        s.Remove(i, 1); //  то нужно удалить только один символ
+                        i--;
+                    }
+                }
+                else if (Char.IsDigit(s[i]) && !isLastDigit) // если текущий символ цифра, а последний не был цифрой
+                {
+                    isLastDigit = true; // то эта цифра является началом подстроки
+                    isRemoved = false;
+                }
+                else
+                {
+                    isLastDigit = false; // иначе сбрасываем флаг цифровой подстроки
                 }
             }
 
-            Console.WriteLine("New line: {0}", str);
+            Console.WriteLine("New line: {0}", s);
         }
 
         static void Main(string[] args)
