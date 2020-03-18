@@ -10,7 +10,7 @@ namespace sol2
             bool isLastDigit = false;
             bool isRemoved = false;
 
-            for (int i = 0; i < s.Length - 1; i++)
+            for (int i = 0; i < s.Length; i++)
             {
                 if (Char.IsDigit(s[i]) && isLastDigit) // если два символа рядом, то считаем это подстрокой и удаляем ее
                 {
