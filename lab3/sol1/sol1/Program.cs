@@ -23,9 +23,9 @@ namespace sol1
             {
                 if (array[i] < 0)   //Находим
                 {
-                    for (int j = 1; j < i; j++) //
+                    for (int j = 1; j < i; j++) //Начинаем со второго элемента
                     {
-                        sum += array[j];
+                        sum += array[j];    //Суммируем до последнего отрицательного элемента
                         if (array[j] == array[i]) break;
                     }
                     break;
@@ -34,23 +34,23 @@ namespace sol1
             Console.WriteLine("Sum between 1st and the last negative element = {0}", sum);
         }
 
-        static void arrayCompression(double[] array)
+        static void arrayCompression(double[] array)    //Метод сжатия массива и установки нулей на место удаленных элементов в конце массива
         {
             for (int i = 0; i < array.Length; i++)
             {
-                if (Math.Abs(array[i]) < 1) array[i] = 0;
+                if (Math.Abs(array[i]) < 1) array[i] = 0;   //Находим по модулю подходящие значения и удаляем их, присваивая 0
             }
 
             for (int i = 0; i < array.Length; i++)
             {
-                for (int j = i + 1; j < array.Length; j++)
+                for (int j = i + 1; j < array.Length; j++)  //Сортируем, передвигая 0 в конец
                 {
                     if (array[i] == 0)
                     {
                         array[i] = array[j];
                         array[j] = 0;
                     }
-                    else break;
+                    else break; //Ну, или если у нас нету нулей, то ничего не происходит
                 }
             }
 
@@ -59,7 +59,7 @@ namespace sol1
         }
 
         
-        static void input(out double[] array)
+        static void input(out double[] array)   //Метод ввода массива
         {
             Console.Write("Enter number of elements: ");
             int n = Convert.ToInt32(Console.ReadLine());
@@ -73,7 +73,7 @@ namespace sol1
             }
         }
 
-        static void output(double[] array)
+        static void output(double[] array)  //Метод вывода массива
         {
             foreach (int j in array)
             {
