@@ -8,7 +8,7 @@ namespace sol2
         {
             int min = 0, max = 0, temp;
 
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < array.GetLength(0); i++)    //В цикле ищем минимальный и максимальный элементы главной диагонали, если находим запоминаем индекс столбца
             {
                 if (array[i, i] > array[max, max])
                 {
@@ -33,7 +33,7 @@ namespace sol2
 
         static void input(out int[,] array)
         {
-            Console.Write("Enter the dimension of the array: ");
+            Console.Write("Enter the dimension of the array: ");    //Ввод размерности массива
             int n = Convert.ToInt32(Console.ReadLine());
 
             array = new int[n, n];
@@ -51,7 +51,7 @@ namespace sol2
             output(array);
         }
 
-        static void randInput(out int[,] array) //рандомный ввод
+        static void randInput(out int[,] array) //Рандомный ввод
         {
             Random rand = new Random();
 
@@ -64,7 +64,7 @@ namespace sol2
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    array[i, j] = rand.Next(-50, 50); //рандомные значения от - 50 до 50
+                    array[i, j] = rand.Next(-50, 50); //Рандомные значения от - 50 до 50
                 }
             }
 
