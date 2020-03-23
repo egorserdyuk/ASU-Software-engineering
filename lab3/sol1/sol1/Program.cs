@@ -18,19 +18,26 @@ namespace sol1
         static void sumBetween(double[] array)  //Метод суммирования между 1 и последним отрицательным числом
         {
             double sum = 0;
-            
-            for (int i = array.Length - 1; i > 0; i--)  //Начинаем с конца искать последний отрицательный элемент
-            {
-                if (array[i] < 0)   //Находим
-                {
-                    for (int j = 1; j < i; j++) //Начинаем со второго элемента
+
+            for (int i = 0; i > array.Length; i++)
+            { 
+                if (array[i] < 0)
+                { 
+                    for (int k = array.Length - 1; k > 0; k--)  //Начинаем с конца искать последний отрицательный элемент
                     {
-                        sum += array[j];    //Суммируем до последнего отрицательного элемента
-                        if (array[j] == array[i]) break;
+                        if (array[k] < 0)   //Находим
+                        {
+                            for (int j = i; j < k; j++) //Начинаем со второго элемента
+                            {
+                                sum += array[j];    //Суммируем до последнего отрицательного элемента
+                                if (array[j] == array[k]) break;
+                            }
+                            break;
+                        }
                     }
-                    break;
                 }
             }
+
             Console.WriteLine("Sum between 1st and the last negative element = {0}", sum);
         }
 
