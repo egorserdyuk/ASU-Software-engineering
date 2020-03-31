@@ -15,30 +15,25 @@ namespace sol1
             Console.WriteLine("Sum of uneven elements = {0}", unevenSum);
         }
 
-        static void sumBetween(double[] array)  //Метод суммирования между 1 и последним отрицательным числом
+        static void sumBetween(double[] array)  //Метод суммирования между первым и последним отрицательными числам
         {
             double sum = 0;
 
-            for (int i = 0; i > array.Length; i++)
-            { 
-                if (array[i] < 0)
-                { 
-                    for (int k = array.Length - 1; k > 0; k--)  //Начинаем с конца искать последний отрицательный элемент
-                    {
-                        if (array[k] < 0)   //Находим
-                        {
-                            for (int j = i; j < k; j++) //Начинаем со второго элемента
-                            {
-                                sum += array[j];    //Суммируем до последнего отрицательного элемента
-                                if (array[j] == array[k]) break;
-                            }
-                            break;
-                        }
-                    }
-                }
+            int first, last; // Ищем первый и последний отрицательные значения
+            for (first = 0; first < array.Length; first++)
+            {
+                if (array[first] < 0) break; // Находим первый отрицательный элемент
+            }
+            for (last = array.Length - 1; last > first; last--)
+            {
+                if (array[last] < 0) break; // Находим последний отрицательный элемент
+            }
+            for (int i = first + 1; i < last; i++)
+            {
+                sum += array[i]; // Суммируем значения между ними
             }
 
-            Console.WriteLine("Sum between 1st and the last negative element = {0}", sum);
+            Console.WriteLine("Sum between the 1st and the last negative element = {0}", sum);
         }
 
         static void arrayCompression(double[] array)    //Метод сжатия массива и установки нулей на место удаленных элементов в конце массива
