@@ -9,11 +9,9 @@ namespace lab2sol4
     {
         static void Main(string[] args)
         {
-            for (int i = 100; i < 1000; i++)
+            for (int i = 101; i < 1000; i += 101)
             {
-                int[] mas = { i / 100, i % 100 };
-                if (mas[0] == mas[1])
-                    Console.WriteLine(i);
+                Console.WriteLine(i); // Переделал вывод через цикл
             }
 
             Console.ReadKey();
