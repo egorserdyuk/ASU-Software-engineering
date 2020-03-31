@@ -14,8 +14,8 @@ namespace lab2sol3
             do
             {
                 Console.Write("Enter gender to see example names: ");
-                gender = char.Parse(Console.ReadLine());
-                switch (gender)
+                gender = char.Parse(Console.ReadLine()); // Получаем запрос на имена
+                switch (gender) // Используем switch для удобства 
                 {
                     case 'm':
                         Console.Write("Peter, John, George\n");
@@ -29,7 +29,7 @@ namespace lab2sol3
                         Console.Write("There is only 2 genders\n");
                         break;
                 }
-            } while (gender != 'e');
+            } while (gender != 'e'); // Выходим из цикла при 'e'
 
             Console.ReadKey();
         }
