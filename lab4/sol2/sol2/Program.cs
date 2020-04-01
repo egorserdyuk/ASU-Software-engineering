@@ -7,16 +7,16 @@ namespace sol2
     {
         static void delNums(StringBuilder str)
         {
-            for (int i = 0; i < str.Length; i++)    //Проходим по строке и если
+            for (int i = 0; i < str.Length; i++)    //Гуляем по строке
             {
-                if (char.IsDigit(str[i]))
+                if (char.IsDigit(str[i])) //И если она - цифра
                 {
-                    str.Remove(i, 1);
+                    str.Remove(i, 1); //Удаляем
                     i -= 2;
                 }
             }
 
-            Console.WriteLine("New line: {0}", str);
+            Console.WriteLine("New line: {0}", str); //Выводим новую строку
         }
 
         static void Main(string[] args)
