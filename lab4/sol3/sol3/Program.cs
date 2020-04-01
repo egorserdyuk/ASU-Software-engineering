@@ -8,16 +8,13 @@ namespace sol3
 
         static void alphabetSort(string str)
         {
-            char[] splitter = { ' ', ',', '.', ';', ':', '?' };
+            char[] splitter = { ' ', ',', '.', ';', ':', '!', '?', '-' }; //Указываем разделители слов
 
-            //String[] words = str.Split(splitter);
+            string[] words = str.Split(splitter, StringSplitOptions.RemoveEmptyEntries); //Создаем список значений, состоящий из слов
 
-            Array.Sort(str, StringComparer.InvariantCulture);
+            Array.Sort(words); //Сортируем
 
-            foreach (string item in str)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(string.Join(" | ", words)); //Выводим через разделитель отсротированное по алфавиту сообщение
         }
         static void Main(string[] args)
         {
