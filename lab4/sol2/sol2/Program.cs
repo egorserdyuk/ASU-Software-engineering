@@ -9,7 +9,7 @@ namespace sol2
         {
             for (int i = 0; i < str.Length; i++)    //Гуляем по строке
             {
-                if (char.IsDigit(str[i])) //И если она - цифра
+                if (char.IsDigit(str[i])) //И если значение - цифра
                 {
                     str.Remove(i, 1); //Удаляем
                     i -= 2;
