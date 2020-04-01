@@ -13,14 +13,14 @@ namespace sol1
                 {
                     flag = true;
                     Console.Write("Characters before the first colon: ");
-                    for (int i = 0; i < x; i++)
+                    for (int i = 0; i < x; i++) //Просто выводим циклом до первого двоеточия
                         Console.Write(str[i]);
                     break;
                 }
             }
 
             if (!flag)
-                Console.Write("There are no colons in the line");
+                Console.Write("There are no colons in the line "); //Ситуация, если в строке нет двоеточия
         }
 
         static void Main(string[] args)
@@ -30,7 +30,9 @@ namespace sol1
 
             beforeColon(str);
 
-            //Console.WriteLine(str.Split(':')[0]); //Хех, это тоже работает стабильно
+            Console.WriteLine();
+
+            Console.WriteLine(str.Split(':')[0]); //Хех, это тоже работает стабильно - если можно не писать функцию, то это лучший вариант. Не считая ситуации, где в строке нет ":"
         }
 
     }
