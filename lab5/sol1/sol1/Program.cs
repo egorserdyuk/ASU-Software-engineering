@@ -7,16 +7,16 @@ namespace sol1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Input string: ");
-            string str = Console.ReadLine();
+            //Console.WriteLine("Input string: ");
+            //string str = Console.ReadLine();
+            string example = "31,99 EXAMPLE 0 EXAMPLE 42";
 
             Regex RegExp = new Regex(@"\d+");
 
-            MatchCollection matches = RegExp.Matches(str);
+            MatchCollection matches = RegExp.Matches(example);
             if (matches.Count > 0)
             {
-                foreach (Match match in matches)
-                    Console.WriteLine("Result = {0}", match.Value);
+                Console.WriteLine("Result = {0}", match.Value);
             }
             else
             {
