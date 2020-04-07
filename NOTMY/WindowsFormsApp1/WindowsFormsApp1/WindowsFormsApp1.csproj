@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3B8D8F8-2C08-4538-BB0B-2BD18E9447E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm.Designer.cs">
+      <DependentUpon>ChildForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClickButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form10.Designer.cs">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12.Designer.cs">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form13.Designer.cs">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form14.Designer.cs">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8.Designer.cs">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9.Designer.cs">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nForm.Designer.cs">
+      <DependentUpon>nForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm.Designer.cs">
+      <DependentUpon>ParentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestList.Designer.cs">
+      <DependentUpon>TestList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestStandartDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestStandartDialog.Designer.cs">
+      <DependentUpon>TestStandartDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTimer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTimer.Designer.cs">
+      <DependentUpon>UserControlTimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTimer2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTimer2.Designer.cs">
+      <DependentUpon>UserControlTimer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinAnim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinAnim.Designer.cs">
+      <DependentUpon>WinAnim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinAPIClass.cs" />
+    <Compile Include="WinAsynchDelegate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinAsynchDelegate.Designer.cs">
+      <DependentUpon>WinAsynchDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinAsynchMetod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinAsynchMetod.Designer.cs">
+      <DependentUpon>WinAsynchMetod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinBackgroundWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinBackgroundWorker.Designer.cs">
+      <DependentUpon>WinBackgroundWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinButNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinButNum.Designer.cs">
+      <DependentUpon>WinButNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinContainer.Designer.cs">
+      <DependentUpon>WinContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinLanguage.Designer.cs">
+      <DependentUpon>WinLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinLinkLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinLinkLabel.Designer.cs">
+      <DependentUpon>WinLinkLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinLinkLabel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinLinkLabel2.Designer.cs">
+      <DependentUpon>WinLinkLabel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinPrint.Designer.cs">
+      <DependentUpon>WinPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winprint2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winprint2.Designer.cs">
+      <DependentUpon>Winprint2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinTimer1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinTimer1.Designer.cs">
+      <DependentUpon>WinTimer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinTimer2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinTimer2.Designer.cs">
+      <DependentUpon>WinTimer2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChildForm.resx">
+      <DependentUpon>ChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form10.resx">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form13.resx">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form14.resx">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form9.resx">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nForm.resx">
+      <DependentUpon>nForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm.resx">
+      <DependentUpon>ParentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestList.resx">
+      <DependentUpon>TestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestStandartDialog.resx">
+      <DependentUpon>TestStandartDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTimer.resx">
+      <DependentUpon>UserControlTimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTimer2.resx">
+      <DependentUpon>UserControlTimer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinAnim.resx">
+      <DependentUpon>WinAnim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinAsynchDelegate.resx">
+      <DependentUpon>WinAsynchDelegate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinAsynchMetod.resx">
+      <DependentUpon>WinAsynchMetod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinBackgroundWorker.resx">
+      <DependentUpon>WinBackgroundWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinButNum.resx">
+      <DependentUpon>WinButNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinContainer.resx">
+      <DependentUpon>WinContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinLanguage.en.resx">
+      <DependentUpon>WinLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinLanguage.resx">
+      <DependentUpon>WinLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinLinkLabel.resx">
+      <DependentUpon>WinLinkLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinLinkLabel2.resx">
+      <DependentUpon>WinLinkLabel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinPrint.resx">
+      <DependentUpon>WinPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winprint2.resx">
+      <DependentUpon>Winprint2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinTimer1.resx">
+      <DependentUpon>WinTimer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinTimer2.resx">
+      <DependentUpon>WinTimer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
