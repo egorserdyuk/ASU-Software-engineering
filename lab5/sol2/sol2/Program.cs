@@ -9,9 +9,9 @@ namespace sol2
         {
             //Console.WriteLine("Input string: ");
             //string str = Console.ReadLine();
-            string str = "22 UDD, 0.002 USD, 200 RUR, 32.21 USD, 666 JPN, 10 EU, 10 CHF";
+            string str = "22 UDD, 0.002 USD, 200 RUR, 32.21 USD, 666 JPN, 10 EU, 10 CHF, 0.5 RUR";
 
-            Regex RegExp = new Regex(@"(?:^|[\n\r]|[^\w\d\.])([1-9]\d*(?:.\d{,2})?\s*(?:USD|EU|RUR))\b");
+            Regex RegExp = new Regex(@"(((\d+))|((\d+\.\d{1,2}?)))\s*(?:USD|EU|RUR)");
 
             MatchCollection matches = RegExp.Matches(str);
             if (matches.Count > 0)
@@ -26,3 +26,4 @@ namespace sol2
         }
     }
 }
+    
