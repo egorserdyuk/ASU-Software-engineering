@@ -7,27 +7,43 @@ namespace sol1
         class String
         {
             private int length; // Длина строки
-            public char[] data;
+            public string[] data;
 
             public int Length //свойства
             {
                 get => length;
                 set => length = value;
             }
-            public char[] Data
+            public string[] Data
             {
                 get => data;
                 set => data = value;
             }
 
-            public double toDouble()
+            public double ToDouble()
             {
-                
+                double outDouble;
+                string dcopy = "";
+
+                for (int i = 0; i < length; i++)
+                {
+                    dcopy += data[i];
+                }
+                double.TryParse(dcopy, out outDouble);
+                return outDouble;
             }
 
-            public String toString()
+            public String ToString()
             {
                 String outString;
+                string dcopy = "";
+
+                for (int i = 0; i < length; i++)
+                {
+                    dcopy += data[i];
+                }
+                outString = Num.ToString();
+                return outString;
             }
 
             public String(bool rand = false, int length = 10)
@@ -35,7 +51,7 @@ namespace sol1
                 this.length = length;
 
                 bool flag = false;
-                data = new char[length];
+                data = new string[length];
 
                 if (rand == false) //ввод с клавиатуры
                 {
@@ -47,7 +63,7 @@ namespace sol1
                             for (int i = 0; i < length; i++)
                             {
                                 Console.Write("String: [{0}] : ", i);
-                                data[i] = Convert.ToChar(Console.ReadLine());
+                                data[i] = Convert.ToString(Console.ReadLine());
                             }
                         }
                         catch
@@ -64,7 +80,7 @@ namespace sol1
                     Random rnd = new Random();
                     for (int i = 0; i < length; i++)
                     {
-                        data[i] = Convert.ToChar(rnd.Next('a', 'a' + 26)); //рандомный символ от 'a' до 'z'
+                        data[i] = Convert.ToString(rnd.Next('a', 'a' + 26)); //рандомный символ от 'a' до 'z'
                     }
                 }
 
@@ -74,11 +90,11 @@ namespace sol1
             {
                 length = exData.length;
 
-                data = new char[length];
+                data = new string[length];
 
                 for (int i = 0; i < n; i++)
                 {
-                    data[i] = Convert.ToChar(exData.data[i]);
+                    data[i] = Convert.ToString(exData.data[i]);
                 }
             }
 
