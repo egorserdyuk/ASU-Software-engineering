@@ -2,19 +2,105 @@
 
 namespace sol1
 {
-    public class String
-    {
-        private int length;
-        public String(int len = 0)
-        {
-            length = len;
-        }
-    }
     class Program
     {
-        static void Main(string[] args)
+        class String
         {
-            Console.WriteLine("Hello World!");
+            private int length; // Длина строки
+            public char[] data;
+
+            public int Length //свойства
+            {
+                get => length;
+                set => length = value;
+            }
+            public char[] Data
+            {
+                get => data;
+                set => data = value;
+            }
+
+            public double toDouble()
+            {
+                
+            }
+
+            public String toString()
+            {
+                String outString;
+            }
+
+            public String(bool rand = false, int length = 10)
+            {
+                this.length = length;
+
+                bool flag = false;
+                data = new char[length];
+
+                if (rand == false) //ввод с клавиатуры
+                {
+                    do //если введена некорректная переменная, то начинается ввод заного
+                    {
+                        try //ловим исключение
+                        {
+                            Console.Write("Input the string: ");
+                            for (int i = 0; i < length; i++)
+                            {
+                                Console.Write("String: [{0}] : ", i);
+                                data[i] = Convert.ToChar(Console.ReadLine());
+                            }
+                        }
+                        catch
+                        {
+                            Console.Write("Введена переменная не того типа\n");
+                            continue; //все плохо - начинаем новую итерацию
+                        }
+
+                        flag = true; //если все ок, то выходим из цикла
+                    } while (flag != true);
+                }
+                else //рандомный ввод
+                {
+                    Random rnd = new Random();
+                    for (int i = 0; i < length; i++)
+                    {
+                        data[i] = Convert.ToChar(rnd.Next('a', 'a' + 26)); //рандомный символ от 'a' до 'z'
+                    }
+                }
+
+            }
+
+            public String(String exData, int n = 5) //конструктор копирования. n - сколько прибавить к симыолу
+            {
+                length = exData.length;
+
+                data = new char[length];
+
+                for (int i = 0; i < n; i++)
+                {
+                    data[i] = Convert.ToChar(exData.data[i]);
+                }
+            }
+
+            ~String() => Console.WriteLine("Сработал деструктор");
+            //сборщик мусора сделает всю работу и нет необходимости явно освобождать память
+
+            public void output() //вывод матрицы
+            {
+                Console.Write("String: ");
+                for (int i = 0; i < length; i++)
+                {
+                    Console.WriteLine();
+                    Console.Write("{0}", data[i]);
+
+                }
+
+            }
+
+            static void Main()
+            {
+                Console.WriteLine("Hello World!");
+            }
         }
     }
 }
