@@ -4,54 +4,30 @@ namespace sol1
 {
     class Program
     {
-        class String
+        class MyString
         {
             private int length; // Длина строки
-            public string[] data;
+            public char[] data;
 
             public int Length //свойства
             {
                 get => length;
                 set => length = value;
             }
-            public string[] Data
+            public char[] Data
             {
                 get => data;
                 set => data = value;
             }
 
-            public double ToDouble()
-            {
-                double outDouble;
-                string dcopy = "";
+            
 
-                for (int i = 0; i < length; i++)
-                {
-                    dcopy += data[i];
-                }
-                double.TryParse(dcopy, out outDouble);
-                return outDouble;
-            }
-
-            public String ToString()
-            {
-                String outString;
-                string dcopy = "";
-
-                for (int i = 0; i < length; i++)
-                {
-                    dcopy += data[i];
-                }
-                outString = Num.ToString();
-                return outString;
-            }
-
-            public String(bool rand = false, int length = 10)
+            public MyString(bool rand = false, int length = 10)
             {
                 this.length = length;
 
                 bool flag = false;
-                data = new string[length];
+                data = new char[length];
 
                 if (rand == false) //ввод с клавиатуры
                 {
@@ -63,7 +39,7 @@ namespace sol1
                             for (int i = 0; i < length; i++)
                             {
                                 Console.Write("String: [{0}] : ", i);
-                                data[i] = Convert.ToString(Console.ReadLine());
+                                //data[i] = Convert.ToString(Console.ReadLine());
                             }
                         }
                         catch
@@ -77,20 +53,20 @@ namespace sol1
                 }
                 else //рандомный ввод
                 {
-                    Random rnd = new Random();
+                    Random rand = new Random();
                     for (int i = 0; i < length; i++)
                     {
-                        data[i] = Convert.ToString(rnd.Next('a', 'a' + 26)); //рандомный символ от 'a' до 'z'
+                        data[i] = Convert.ToString(rand.Next('a', 'a' + 26)); //рандомный символ от 'a' до 'z'
                     }
                 }
 
             }
 
-            public String(String exData, int n = 5) //конструктор копирования. n - сколько прибавить к симыолу
+            public MyString(MyString exData, int n = 5) //конструктор копирования. n - сколько прибавить к симыолу
             {
                 length = exData.length;
 
-                data = new string[length];
+                data = new char[length];
 
                 for (int i = 0; i < n; i++)
                 {
@@ -98,7 +74,7 @@ namespace sol1
                 }
             }
 
-            ~String() => Console.WriteLine("Сработал деструктор");
+            ~MyString() => Console.WriteLine("Сработал деструктор");
             //сборщик мусора сделает всю работу и нет необходимости явно освобождать память
 
             public void output() //вывод матрицы
@@ -106,7 +82,6 @@ namespace sol1
                 Console.Write("String: ");
                 for (int i = 0; i < length; i++)
                 {
-                    Console.WriteLine();
                     Console.Write("{0}", data[i]);
 
                 }
@@ -115,7 +90,13 @@ namespace sol1
 
             static void Main()
             {
-                Console.WriteLine("Hello World!");
+                MyString str1 = new MyString(true, 10); //создаем объект класса
+                MyString str2 = new MyString(str1, 5); //создаем копию объекта класса, все элементы больше на 2
+                str1.output();
+                Console.WriteLine();
+                str2.output(); //выводим объект и его копию
+                Console.ReadKey();
+
             }
         }
     }
