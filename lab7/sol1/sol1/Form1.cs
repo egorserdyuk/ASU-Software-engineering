@@ -25,7 +25,7 @@ namespace sol1
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("A program for translating numbers into other number systems.\nby Egor Serdyuk (c) 2020");
+            MessageBox.Show("A program for translating numbers into other number systems.\nThe ninth variant\nby Egor Serdyuk (c) 2020");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
