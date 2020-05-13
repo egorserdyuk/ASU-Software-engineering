@@ -16,5 +16,21 @@ namespace sol1
         {
             InitializeComponent();
         }
+
+        private void translateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 dialog = new Form2();
+            dialog.ShowDialog();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A program for translating numbers into other number systems.\nby Egor Serdyuk (c) 2020");
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
