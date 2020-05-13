@@ -108,7 +108,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 368);
+            this.textBox2.Location = new System.Drawing.Point(123, 368);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(204, 20);
             this.textBox2.TabIndex = 7;
@@ -116,7 +116,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 371);
+            this.label3.Location = new System.Drawing.Point(77, 371);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 8;
@@ -136,6 +136,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form2";
             this.Text = "Translator";
             this.ResumeLayout(false);
